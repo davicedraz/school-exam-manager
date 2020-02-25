@@ -1,4 +1,4 @@
-package com.cedraz.school.exams.app;
+package com.cedraz.sas.exams.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
