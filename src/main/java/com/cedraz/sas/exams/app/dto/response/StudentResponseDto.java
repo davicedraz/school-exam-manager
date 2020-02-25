@@ -13,7 +13,7 @@ public class StudentResponseDto {
     private String name;
     private int registrationNumber;
 
-    public static StudentResponseDto toDto(Student student) {
+    public static StudentResponseDto toResponseDto(Student student) {
         return new StudentResponseDto(student.getId(), student.getName(), student.getRegistrationNumber());
     }
 
