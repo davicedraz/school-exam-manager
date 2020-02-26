@@ -12,10 +12,10 @@
     <a alt="Docker">
         <img src="https://img.shields.io/badge/Docker-v18-yellowgreen.svg" />
     </a>
-    <a alt="Dependencies">
-        <img src="https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg" />
-    </a>
     <a alt="License">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+    </a>
+    <a alt="Dependencies">
+        <img src="https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg" />
     </a>
 </p>
