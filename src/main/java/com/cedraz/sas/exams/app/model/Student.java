@@ -3,6 +3,7 @@ package com.cedraz.sas.exams.app.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -35,7 +36,6 @@ public class Student {
     private int registrationNumber;
 
     @NotNull
-    @Size(min=5, max=8)
     private String password;
 
     @CreationTimestamp

@@ -40,9 +40,10 @@ public class StudentController {
         return new ResponseEntity<>(StudentResponseDto.toResponseDto(studentFound), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
-    private void deleteStudent(@PathVariable("id") long id) {
-        studentService.delete(id);
+    @DeleteMapping("/{registration}")
+    private ResponseEntity deleteStudent(@PathVariable("registration") int registrationNumber) {
+        studentService.deleteStudentByRegistration(registrationNumber);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 }

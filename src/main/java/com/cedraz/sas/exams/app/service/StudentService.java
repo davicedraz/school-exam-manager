@@ -10,7 +10,6 @@ public interface StudentService {
     List<Student> listAllStudents();
     Student getStudentByRegistration(int registrationNumber);
     Student saveOrUpdate(StudentDto studant);
-    Student changePassword(StudentDto student, String newPassword);
-    void delete(long id);
+    void deleteStudentByRegistration(int registrationNumber);
 
 }

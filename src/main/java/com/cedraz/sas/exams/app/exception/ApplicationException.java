@@ -17,7 +17,7 @@ public class ApplicationException {
         ApplicationException.propertiesConfig = propertiesConfig;
     }
 
-    public static RuntimeException throwException(String messageTemplate, String... args) {
+    public static RuntimeException throwException(String messageTemplate, String... args) { //TODO: Remove if never used
         return new RuntimeException(format(messageTemplate, args));
     }
 
@@ -26,12 +26,12 @@ public class ApplicationException {
         return throwException(exceptionType, messageTemplate, args);
     }
 
-    public static RuntimeException throwExceptionWithId(EntityType entityType, ExceptionType exceptionType, String id, String... args) {
+    public static RuntimeException throwExceptionWithId(EntityType entityType, ExceptionType exceptionType, String id, String... args) { //TODO: Remove if never used
         String messageTemplate = getMessageTemplate(entityType, exceptionType).concat(".").concat(id);
         return throwException(exceptionType, messageTemplate, args);
     }
 
-    public static RuntimeException throwExceptionWithTemplate(EntityType entityType, ExceptionType exceptionType, String messageTemplate, String... args) {
+    public static RuntimeException throwExceptionWithTemplate(EntityType entityType, ExceptionType exceptionType, String messageTemplate, String... args) { //TODO: Remove if never used
         return throwException(exceptionType, messageTemplate, args);
     }
 

@@ -10,9 +10,6 @@ import lombok.experimental.Accessors;
 
 import java.util.Date;
 
-/**
- * @author Arpit Khandelwal
- */
 @Getter
 @Setter
 @Accessors(chain = true)
@@ -31,43 +28,43 @@ public class ResponseDto<T> {
         EXCEPTION, WRONG_CREDENTIALS, ACCESS_DENIED, NOT_FOUND, DUPLICATE_ENTITY
     }
 
-    public static <T> ResponseDto<T> badRequest() {
+    public static <T> ResponseDto<T> badRequest() { //TODO: Remove if not used
         ResponseDto<T> response = new ResponseDto<>();
         response.setStatus(Status.BAD_REQUEST);
         return response;
     }
 
-    public static <T> ResponseDto<T> ok() {
+    public static <T> ResponseDto<T> ok() { //TODO: Remove if not used
         ResponseDto<T> response = new ResponseDto<>();
         response.setStatus(Status.OK);
         return response;
     }
 
-    public static <T> ResponseDto<T> unauthorized() {
+    public static <T> ResponseDto<T> unauthorized() { //TODO: Remove if not used
         ResponseDto<T> response = new ResponseDto<>();
         response.setStatus(Status.UNAUTHORIZED);
         return response;
     }
 
-    public static <T> ResponseDto<T> validationException() {
+    public static <T> ResponseDto<T> validationException() { //TODO: Remove if not used
         ResponseDto<T> response = new ResponseDto<>();
         response.setStatus(Status.VALIDATION_EXCEPTION);
         return response;
     }
 
-    public static <T> ResponseDto<T> wrongCredentials() {
+    public static <T> ResponseDto<T> wrongCredentials() { //TODO: Remove if not used
         ResponseDto<T> response = new ResponseDto<>();
         response.setStatus(Status.WRONG_CREDENTIALS);
         return response;
     }
 
-    public static <T> ResponseDto<T> accessDenied() {
+    public static <T> ResponseDto<T> accessDenied() { //TODO: Remove if not used
         ResponseDto<T> response = new ResponseDto<>();
         response.setStatus(Status.ACCESS_DENIED);
         return response;
     }
 
-    public static <T> ResponseDto<T> exception() {
+    public static <T> ResponseDto<T> exception() { //TODO: Remove if not used
         ResponseDto<T> response = new ResponseDto<>();
         response.setStatus(Status.EXCEPTION);
         return response;
