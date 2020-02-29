@@ -1,4 +1,4 @@
-package com.cedraz.sas.exams.app.config;
+package com.cedraz.exams.app.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;

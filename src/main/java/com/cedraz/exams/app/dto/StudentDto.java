@@ -1,6 +1,6 @@
-package com.cedraz.sas.exams.app.dto;
+package com.cedraz.exams.app.dto;
 
-import com.cedraz.sas.exams.app.model.Student;
+import com.cedraz.exams.app.model.Student;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

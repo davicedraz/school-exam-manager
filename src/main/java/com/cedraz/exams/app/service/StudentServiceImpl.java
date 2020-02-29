@@ -1,15 +1,11 @@
-package com.cedraz.sas.exams.app.service;
+package com.cedraz.exams.app.service;
 
-import com.cedraz.sas.exams.app.exception.ApplicationException;
-import com.cedraz.sas.exams.app.exception.EntityType;
-import com.cedraz.sas.exams.app.exception.ExceptionType;
-import com.cedraz.sas.exams.app.repository.StudentRepository;
-import com.cedraz.sas.exams.app.dto.StudentDto;
-import com.cedraz.sas.exams.app.model.Student;
-
-import static com.cedraz.sas.exams.app.exception.EntityType.STUDENT;
-import static com.cedraz.sas.exams.app.exception.ExceptionType.DUPLICATE_ENTITY;
-import static com.cedraz.sas.exams.app.exception.ExceptionType.ENTITY_NOT_FOUND;
+import com.cedraz.exams.app.exception.ApplicationException;
+import com.cedraz.exams.app.exception.EntityType;
+import com.cedraz.exams.app.exception.ExceptionType;
+import com.cedraz.exams.app.model.Student;
+import com.cedraz.exams.app.repository.StudentRepository;
+import com.cedraz.exams.app.dto.StudentDto;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +31,7 @@ public class StudentServiceImpl implements StudentService {
             newStudent.setPassword(bCryptPasswordEncoder.encode(newStudent.getPassword()));
             return studentRepository.save(newStudent.toObject());
         } else {
-            throw exception(STUDENT, DUPLICATE_ENTITY, String.valueOf(newStudent.getRegistrationNumber()));
+            throw exception(EntityType.STUDENT, ExceptionType.DUPLICATE_ENTITY, String.valueOf(newStudent.getRegistrationNumber()));
         }
     }
 
@@ -51,7 +47,7 @@ public class StudentServiceImpl implements StudentService {
         if(studentExists(registrationNumber)) {
             return studentRepository.findByRegistrationNumber(registrationNumber);
         } else {
-            throw exception(STUDENT, ENTITY_NOT_FOUND, String.valueOf(registrationNumber));
+            throw exception(EntityType.STUDENT, ExceptionType.ENTITY_NOT_FOUND, String.valueOf(registrationNumber));
         }
     }
 
@@ -59,7 +55,7 @@ public class StudentServiceImpl implements StudentService {
         if(studentExists(registrationNumber)) {
             studentRepository.deleteByRegistrationNumber(registrationNumber);
         } else {
-            throw exception(STUDENT, ENTITY_NOT_FOUND, String.valueOf(registrationNumber));
+            throw exception(EntityType.STUDENT, ExceptionType.ENTITY_NOT_FOUND, String.valueOf(registrationNumber));
         }
     }
 

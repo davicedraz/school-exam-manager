@@ -1,6 +1,6 @@
-package com.cedraz.sas.exams.app.exception;
+package com.cedraz.exams.app.exception;
 
-import com.cedraz.sas.exams.app.dto.response.ResponseDto;
+import com.cedraz.exams.app.dto.response.ResponseDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

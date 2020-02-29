@@ -1,4 +1,4 @@
-package com.cedraz.sas.exams.app.exception;
+package com.cedraz.exams.app.exception;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

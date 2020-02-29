@@ -1,4 +1,4 @@
-package com.cedraz.sas.exams.app.exception;
+package com.cedraz.exams.app.exception;
 
 public enum ExceptionType {
     ENTITY_NOT_FOUND("not.found"),

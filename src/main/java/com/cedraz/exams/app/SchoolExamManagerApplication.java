@@ -1,4 +1,4 @@
-package com.cedraz.sas.exams.app;
+package com.cedraz.exams.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

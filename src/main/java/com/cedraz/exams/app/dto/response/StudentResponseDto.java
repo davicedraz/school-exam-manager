@@ -1,6 +1,6 @@
-package com.cedraz.sas.exams.app.dto.response;
+package com.cedraz.exams.app.dto.response;
 
-import com.cedraz.sas.exams.app.model.Student;
+import com.cedraz.exams.app.model.Student;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

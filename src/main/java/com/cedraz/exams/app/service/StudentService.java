@@ -1,7 +1,7 @@
-package com.cedraz.sas.exams.app.service;
+package com.cedraz.exams.app.service;
 
-import com.cedraz.sas.exams.app.dto.StudentDto;
-import com.cedraz.sas.exams.app.model.Student;
+import com.cedraz.exams.app.dto.StudentDto;
+import com.cedraz.exams.app.model.Student;
 
 import java.util.List;
 

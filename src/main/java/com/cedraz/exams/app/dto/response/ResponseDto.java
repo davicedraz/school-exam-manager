@@ -1,6 +1,6 @@
-package com.cedraz.sas.exams.app.dto.response;
+package com.cedraz.exams.app.dto.response;
 
-import com.cedraz.sas.exams.app.exception.ResponseError;
+import com.cedraz.exams.app.exception.ResponseError;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;

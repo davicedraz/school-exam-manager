@@ -1,4 +1,4 @@
-package com.cedraz.sas.exams.app.model;
+package com.cedraz.exams.app.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

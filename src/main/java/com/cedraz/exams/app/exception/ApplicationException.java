@@ -1,6 +1,6 @@
-package com.cedraz.sas.exams.app.exception;
+package com.cedraz.exams.app.exception;
 
-import com.cedraz.sas.exams.app.config.PropertiesConfig;
+import com.cedraz.exams.app.config.PropertiesConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
