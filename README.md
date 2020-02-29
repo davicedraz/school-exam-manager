@@ -2,7 +2,7 @@
 
 #### REST API to managing school tests and automatically measure student performance.
 
-<p >
+<p align="center">
     <a alt="Java">
         <img src="https://img.shields.io/badge/Java-v1.8-orange.svg" />
     </a>
