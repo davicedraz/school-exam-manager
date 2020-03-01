@@ -1,6 +1,6 @@
 package com.cedraz.exams.app.exception;
 
-import com.cedraz.exams.app.config.PropertiesConfig;
+import com.cedraz.exams.app.config.PropertiesConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,11 +10,11 @@ import java.util.Optional;
 @Component
 public class ApplicationException {
 
-    private static PropertiesConfig propertiesConfig;
+    private static PropertiesConfiguration propertiesConfiguration;
 
     @Autowired
-    public ApplicationException(PropertiesConfig propertiesConfig) {
-        ApplicationException.propertiesConfig = propertiesConfig;
+    public ApplicationException(PropertiesConfiguration propertiesConfiguration) {
+        ApplicationException.propertiesConfiguration = propertiesConfiguration;
     }
 
     public static RuntimeException throwException(String messageTemplate, String... args) { //TODO: Remove if never used
@@ -61,7 +61,7 @@ public class ApplicationException {
     }
 
     private static String format(String template, String... args) {
-        Optional<String> templateContent = Optional.ofNullable(propertiesConfig.getConfigValue(template));
+        Optional<String> templateContent = Optional.ofNullable(propertiesConfiguration.getConfigValue(template));
         return templateContent.map(s -> MessageFormat.format(s, args)).orElseGet(() -> String.format(template, args));
     }
 

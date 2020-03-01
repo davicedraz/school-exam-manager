@@ -22,7 +22,8 @@ public class Test {
     @OneToMany(mappedBy = "test")
     private List<Question> questions;
 
-    @OneToOne(mappedBy = "test")
+    @JoinColumn(unique = true)
+    @OneToOne(mappedBy = "test", cascade = CascadeType.ALL)
     private AnswerKey answerKey;
 
     @ManyToOne

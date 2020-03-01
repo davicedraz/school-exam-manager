@@ -1,5 +1,8 @@
 package com.cedraz.exams.app.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -26,7 +29,13 @@ public class PracticeExam {
     private List<Test> tests;
 
     @OneToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "student_number", referencedColumnName = "registration_number")
     private Student student;
+
+    @CreationTimestamp
+    private Date createdAt;
+
+    @UpdateTimestamp
+    private Date updatedAt;
 
 }

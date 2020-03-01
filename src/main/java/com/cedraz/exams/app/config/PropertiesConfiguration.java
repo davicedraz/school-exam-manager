@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @PropertySource("classpath:custom.properties")
-public class PropertiesConfig {
+public class PropertiesConfiguration {
     @Autowired
     private Environment env;
 

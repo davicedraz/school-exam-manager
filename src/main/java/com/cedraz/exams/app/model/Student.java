@@ -31,7 +31,7 @@ public class Student {
     private String name;
 
     @NotNull
-    @Column(name="registration_number")
+    @Column(name="registration_number", unique=true)
     private int registrationNumber;
 
     @NotNull
