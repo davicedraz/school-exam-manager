@@ -20,6 +20,6 @@
 
 ##### REST API to managing school tests and automatically measure student performance.
 
-###About
+### About
 
 This project it is being developed to demonstrate the best way I can, at this point, the use of Spring Boot Framework following all the best practices that are recommended by Spring Framework 5.0. Ensuring the code is loosely coupled and that all the layers in the application are independent of each other and talk using neutral objects. 
