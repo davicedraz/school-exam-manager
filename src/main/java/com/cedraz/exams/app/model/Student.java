@@ -15,13 +15,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name="students")
 @Getter
+@Setter
 @NoArgsConstructor
-public class Student {
+public class Student implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

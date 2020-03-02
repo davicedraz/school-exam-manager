@@ -1,7 +1,7 @@
 package com.cedraz.exams.app.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,6 +9,8 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class PracticeExam {
 
     @Id
@@ -22,7 +24,7 @@ public class PracticeExam {
     private String grade;
 
     @Column(name="total_score")
-    private int totalScore;
+    private Integer totalScore;
 
     @NotNull
     @OneToMany(mappedBy = "exam")
@@ -31,11 +33,5 @@ public class PracticeExam {
     @OneToOne
     @JoinColumn(name = "student_number", referencedColumnName = "registration_number")
     private Student student;
-
-    @CreationTimestamp
-    private Date createdAt;
-
-    @UpdateTimestamp
-    private Date updatedAt;
 
 }

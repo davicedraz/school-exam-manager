@@ -1,4 +1,4 @@
-package com.cedraz.exams.app.service;
+package com.cedraz.exams.app.service.impl;
 
 import com.cedraz.exams.app.exception.ApplicationException;
 import com.cedraz.exams.app.exception.EntityType;
@@ -7,6 +7,7 @@ import com.cedraz.exams.app.model.Student;
 import com.cedraz.exams.app.repository.StudentRepository;
 import com.cedraz.exams.app.dto.StudentDto;
 
+import com.cedraz.exams.app.service.StudentService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -37,8 +38,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> listAllStudents() {
-        List<Student> students = new ArrayList<>();
-        students.addAll(studentRepository.findAll());
+        List<Student> students = new ArrayList<>(studentRepository.findAll());
         return students;
     }
 
@@ -61,7 +61,7 @@ public class StudentServiceImpl implements StudentService {
 
     private boolean studentExists(int registrationNumber) {
         Student student = studentRepository.findByRegistrationNumber(registrationNumber);
-        return student == null ? false : true;
+        return student != null;
     }
 
     private RuntimeException exception(EntityType entityType, ExceptionType exceptionType, String... args) {

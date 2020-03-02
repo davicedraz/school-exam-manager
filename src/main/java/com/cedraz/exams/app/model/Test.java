@@ -34,10 +34,4 @@ public class Test {
 
     private int score;
 
-    @CreationTimestamp
-    private Date createdAt;
-
-    @UpdateTimestamp
-    private Date updatedAt;
-
 }

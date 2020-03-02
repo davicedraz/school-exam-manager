@@ -26,10 +26,4 @@ public class AnswerKey {
     @JoinColumn(name = "test_id")
     private Test test;
 
-    @CreationTimestamp
-    private Date createdAt;
-
-    @UpdateTimestamp
-    private Date updatedAt;
-
 }

@@ -57,10 +57,4 @@ public class Question {
         }
     }
 
-    @CreationTimestamp
-    private Date createdAt;
-
-    @UpdateTimestamp
-    private Date updatedAt;
-
 }

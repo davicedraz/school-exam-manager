@@ -5,7 +5,7 @@ import org.flywaydb.core.api.migration.Context;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 
-public class V2__Students extends BaseJavaMigration {
+public class V1_1__Students extends BaseJavaMigration {
 
     public void migrate(Context context) {
         seedStudent1(context);
