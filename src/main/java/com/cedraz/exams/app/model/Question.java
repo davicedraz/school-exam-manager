@@ -2,14 +2,13 @@ package com.cedraz.exams.app.model;
 
 import com.cedraz.exams.app.model.constant.Answer;
 import com.cedraz.exams.app.model.constant.Difficulty;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.Getter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 @Entity
+@Getter
 @Table(name="questions")
 public class Question {
 

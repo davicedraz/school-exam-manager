@@ -1,15 +1,18 @@
 package com.cedraz.exams.app.model;
 
 import com.cedraz.exams.app.model.constant.Answer;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class AnswerKey {
 
     @Id
@@ -26,4 +29,7 @@ public class AnswerKey {
     @JoinColumn(name = "test_id")
     private Test test;
 
+    public AnswerKey(List<Answer> correctAnswers) {
+        this.correctAnswers = correctAnswers;
+    }
 }

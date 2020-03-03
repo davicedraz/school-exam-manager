@@ -1,16 +1,15 @@
 package com.cedraz.exams.app.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name="tests")
+@NoArgsConstructor
 public class Test {
 
     @Id
@@ -22,7 +21,7 @@ public class Test {
     @OneToMany(mappedBy = "test")
     private List<Question> questions;
 
-    @JoinColumn(unique = true)
+    @JoinColumn(unique = true, nullable = false)
     @OneToOne(mappedBy = "test", cascade = CascadeType.ALL)
     private AnswerKey answerKey;
 
@@ -31,5 +30,11 @@ public class Test {
     private PracticeExam exam;
 
     private int score;
+
+    public Test(List<Question> questions, AnswerKey answerKey, PracticeExam exam) {
+        this.questions = questions;
+        this.answerKey = answerKey;
+        this.exam = exam;
+    }
 
 }
