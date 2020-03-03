@@ -27,7 +27,7 @@ public class StudentServiceImpl implements StudentService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public Student saveOrUpdate(StudentDto newStudent) {
+    public Student saveNew(StudentDto newStudent) {
         if(!studentExists(newStudent.getRegistrationNumber())) {
             newStudent.setPassword(bCryptPasswordEncoder.encode(newStudent.getPassword()));
             return studentRepository.save(newStudent.toObject());

@@ -30,8 +30,6 @@ public class Test {
     @JoinColumn(name="practice_exam_id")
     private PracticeExam exam;
 
-    private String subject;
-
     private int score;
 
 }

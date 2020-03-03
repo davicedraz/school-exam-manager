@@ -17,11 +17,16 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Lob
     @NotNull
     private String title;
 
+    @Lob
     @NotNull
     private String description;
+
+    @NotNull
+    private String subject;
 
     @ManyToOne
     @JoinColumn(name="test_id")

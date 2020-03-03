@@ -9,7 +9,7 @@ public interface StudentService {
 
     List<Student> listAllStudents();
     Student getStudentByRegistration(int registrationNumber);
-    Student saveOrUpdate(StudentDto studant);
+    Student saveNew(StudentDto student);
     void deleteStudentByRegistration(int registrationNumber);
 
 }
