@@ -27,7 +27,7 @@ public class PracticeExam {
     private Integer totalScore;
 
     @NotNull
-    @OneToMany(mappedBy = "exam")
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Test> tests;
 
     @OneToOne

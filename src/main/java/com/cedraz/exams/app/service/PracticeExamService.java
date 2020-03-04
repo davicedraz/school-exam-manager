@@ -7,7 +7,7 @@ import java.util.List;
 public interface PracticeExamService {
 
     List<PracticeExam> listAll();
-    List<PracticeExam> listAllByGrade();
-    PracticeExam listByStudent();
+    List<PracticeExam> listAllByGrade(String grade);
+    PracticeExam listByStudent(Integer studentRegistration);
 
 }

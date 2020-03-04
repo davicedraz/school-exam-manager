@@ -3,12 +3,14 @@ package com.cedraz.exams.app.model;
 import com.cedraz.exams.app.model.constant.Answer;
 import com.cedraz.exams.app.model.constant.Difficulty;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
+@Setter
 @Table(name="questions")
 public class Question {
 
@@ -26,10 +28,6 @@ public class Question {
 
     @NotNull
     private String subject;
-
-    @ManyToOne
-    @JoinColumn(name="test_id")
-    private Test test;
 
     @NotNull
     @Column(name="correct_answer")
