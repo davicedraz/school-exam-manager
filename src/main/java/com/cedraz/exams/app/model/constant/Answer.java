@@ -1,5 +1,5 @@
 package com.cedraz.exams.app.model.constant;
 
-public enum Answer {
+public enum Answer  {
     A, B, C, D, E
 }

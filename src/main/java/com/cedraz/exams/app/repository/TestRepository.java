@@ -1,7 +1,7 @@
 package com.cedraz.exams.app.repository;
 
+import com.cedraz.exams.app.model.Question;
 import com.cedraz.exams.app.model.Test;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TestRepository extends JpaRepository<Test, Long> {
-}
+public interface TestRepository extends JpaRepository<Test, Long> { }

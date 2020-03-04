@@ -1,21 +1,24 @@
 package com.cedraz.exams.app.model;
 
 import com.cedraz.exams.app.model.constant.Answer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class AnswerKey {
+public class AnswerKey implements Serializable {
 
     @Id
+    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
@@ -26,6 +29,7 @@ public class AnswerKey {
     private List<Answer> correctAnswers;
 
     @OneToOne
+    @JsonIgnore
     @JoinColumn(name = "test_id")
     private Test test;
 

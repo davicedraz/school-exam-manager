@@ -2,6 +2,7 @@ package com.cedraz.exams.app.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,6 +13,7 @@ import java.util.List;
 @Entity
 @Table(name="tests")
 @Getter
+@Setter
 @NoArgsConstructor
 public class Test implements Serializable {
 
