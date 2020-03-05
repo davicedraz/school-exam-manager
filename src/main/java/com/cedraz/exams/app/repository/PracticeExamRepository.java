@@ -9,5 +9,6 @@ public interface PracticeExamRepository extends JpaRepository<PracticeExam, Long
 
     List<PracticeExam> findAllByGrade(String grade);
     PracticeExam findByStudent_RegistrationNumber(Integer registrationNumber);
+    List<PracticeExam> findAllByOrderByTotalScore();
 
 }

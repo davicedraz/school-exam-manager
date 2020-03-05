@@ -1,8 +1,8 @@
 package com.cedraz.exams.app.controller;
 
 import com.cedraz.exams.app.dto.AnswerDto;
-import com.cedraz.exams.app.dto.response.StudentResponseDto;
 import com.cedraz.exams.app.model.AnswerKey;
+import com.cedraz.exams.app.model.Question;
 import com.cedraz.exams.app.service.AnswerKeyService;
 import com.cedraz.exams.app.service.TestService;
 
@@ -25,9 +25,9 @@ public class TestController {
     @Autowired
     AnswerKeyService answerKeyService;
 
-    @PutMapping("/test/{testId}/question/{questionId}")
-    private ResponseEntity<StudentResponseDto> saveQuestionAnswer(@PathVariable("testId") long testId,
-        @PathVariable("questionId") long questionId, @RequestBody @Valid AnswerDto answer) {
+    @PatchMapping("/test/{testId}/question/{questionId}")
+    private ResponseEntity<Question> saveQuestionAnswer(@PathVariable("testId") long testId,
+            @PathVariable("questionId") long questionId, @RequestBody @Valid AnswerDto answer) {
         testService.answerOneQuestion(testId, questionId, answer);
         return new ResponseEntity<>(HttpStatus.OK);
     }

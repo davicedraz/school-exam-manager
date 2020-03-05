@@ -17,34 +17,9 @@ public class ApplicationException {
         ApplicationException.propertiesConfiguration = propertiesConfiguration;
     }
 
-    public static RuntimeException throwException(String messageTemplate, String... args) { //TODO: Remove if never used
-        return new RuntimeException(format(messageTemplate, args));
-    }
-
     public static RuntimeException throwException(EntityType entityType, ExceptionType exceptionType, String... args) {
         String messageTemplate = getMessageTemplate(entityType, exceptionType);
         return throwException(exceptionType, messageTemplate, args);
-    }
-
-    public static RuntimeException throwExceptionWithId(EntityType entityType, ExceptionType exceptionType, String id, String... args) { //TODO: Remove if never used
-        String messageTemplate = getMessageTemplate(entityType, exceptionType).concat(".").concat(id);
-        return throwException(exceptionType, messageTemplate, args);
-    }
-
-    public static RuntimeException throwExceptionWithTemplate(EntityType entityType, ExceptionType exceptionType, String messageTemplate, String... args) { //TODO: Remove if never used
-        return throwException(exceptionType, messageTemplate, args);
-    }
-
-    public static class EntityNotFoundException extends RuntimeException {
-        public EntityNotFoundException(String message) {
-            super(message);
-        }
-    }
-
-    public static class DuplicateEntityException extends RuntimeException {
-        public DuplicateEntityException(String message) {
-            super(message);
-        }
     }
 
     private static RuntimeException throwException(ExceptionType exceptionType, String messageTemplate, String... args) {
@@ -63,6 +38,24 @@ public class ApplicationException {
     private static String format(String template, String... args) {
         Optional<String> templateContent = Optional.ofNullable(propertiesConfiguration.getConfigValue(template));
         return templateContent.map(s -> MessageFormat.format(s, args)).orElseGet(() -> String.format(template, args));
+    }
+
+    public static class EntityNotFoundException extends RuntimeException {
+        public EntityNotFoundException(String message) {
+            super(message);
+        }
+    }
+
+    public static class DuplicateEntityException extends RuntimeException {
+        public DuplicateEntityException(String message) {
+            super(message);
+        }
+    }
+
+    public static class EntityException extends RuntimeException {
+        public EntityException(String message) {
+            super(message);
+        }
     }
 
 }
