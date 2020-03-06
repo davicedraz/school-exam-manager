@@ -11,6 +11,8 @@ public class V1_2__Practice_Exam extends BaseJavaMigration {
         seedExamForStudent1(context);
         seedExamForStudent2(context);
         seedExamForStudent3(context);
+        seedExamForStudent4(context);
+        seedExamForStudent5(context);
     }
 
     private void seedExamForStudent1(Context context) {
@@ -29,6 +31,18 @@ public class V1_2__Practice_Exam extends BaseJavaMigration {
         new JdbcTemplate(new SingleConnectionDataSource(context.getConnection(), true))
                 .execute("INSERT INTO practice_exam (id, date, grade, student_number) " +
                         "VALUES(hibernate_sequence.nextval, '2020-03-26 15:00:00.000', '9ANO', 3)");
+    }
+
+    private void seedExamForStudent4(Context context) {
+        new JdbcTemplate(new SingleConnectionDataSource(context.getConnection(), true))
+                .execute("INSERT INTO practice_exam (id, date, grade, student_number) " +
+                        "VALUES(hibernate_sequence.nextval, '2020-03-26 15:00:00.000', '9ANO', 4)");
+    }
+
+    private void seedExamForStudent5(Context context) {
+        new JdbcTemplate(new SingleConnectionDataSource(context.getConnection(), true))
+                .execute("INSERT INTO practice_exam (id, date, grade, student_number) " +
+                        "VALUES(hibernate_sequence.nextval, '2020-03-26 15:00:00.000', '9ANO', 5)");
     }
 
 }

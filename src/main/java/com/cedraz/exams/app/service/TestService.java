@@ -6,6 +6,6 @@ import com.cedraz.exams.app.model.Test;
 public interface TestService {
 
     int calculateScore(Test test);
-    void answerOneQuestion(long testId, long questionId, AnswerDto answer);
+    void answerOneQuestion(long studentId, long testId, long questionId, AnswerDto answer);
 
 }

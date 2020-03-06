@@ -50,7 +50,14 @@ public class MigrationsConfiguration {
 
         practiceExams.forEach(exam -> {
             AnswerKey answerKey = new AnswerKey(correctAnswers);
-            Test test = testRepository.save(new Test(questions, answerKey));
+            List<Question> newQuestions = questions.stream().map(question -> {
+                Question q = new Question(question.getTitle(), question.getDescription(),
+                        question.getSubject(), question.getCorrectAnswer(), question.getDifficulty());
+                questionRepository.save(q);
+                return q;
+            }).collect(Collectors.toList());
+
+            Test test = testRepository.save(new Test(newQuestions, answerKey));
 
             exam.getTests().add(test);
             practiceExamRepository.save(exam);

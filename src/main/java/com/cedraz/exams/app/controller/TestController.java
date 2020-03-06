@@ -26,9 +26,9 @@ public class TestController {
     AnswerKeyService answerKeyService;
 
     @PatchMapping("/test/{testId}/question/{questionId}")
-    private ResponseEntity<Question> saveQuestionAnswer(@PathVariable("testId") long testId,
+    private ResponseEntity<Question> saveQuestionAnswer(@RequestHeader("Student-Id") long studentId, @PathVariable("testId") long testId,
             @PathVariable("questionId") long questionId, @RequestBody @Valid AnswerDto answer) {
-        testService.answerOneQuestion(testId, questionId, answer);
+        testService.answerOneQuestion(studentId, testId, questionId, answer);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

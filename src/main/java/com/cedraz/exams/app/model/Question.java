@@ -2,9 +2,10 @@ package com.cedraz.exams.app.model;
 
 import com.cedraz.exams.app.model.constant.Answer;
 import com.cedraz.exams.app.model.constant.Difficulty;
-import lombok.Getter;
-import lombok.Setter;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @Table(name="questions")
+@NoArgsConstructor
 public class Question {
 
     @Id
@@ -57,6 +59,14 @@ public class Question {
         if (difficulty != null) {
             this.pointValue = difficulty.getPoints();
         }
+    }
+
+    public Question(String title, String description, String subject, Answer correctAnswer, Difficulty difficulty) {
+        this.title = title;
+        this.description = description;
+        this.subject = subject;
+        this.correctAnswer = correctAnswer;
+        this.difficulty = difficulty;
     }
 
 }

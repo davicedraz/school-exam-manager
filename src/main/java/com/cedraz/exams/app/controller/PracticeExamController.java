@@ -1,10 +1,8 @@
 package com.cedraz.exams.app.controller;
 
-import com.cedraz.exams.app.dto.StudentDto;
 import com.cedraz.exams.app.dto.response.ExamResultResponseDto;
 import com.cedraz.exams.app.dto.response.PracticeExamResponseDto;
 import com.cedraz.exams.app.model.PracticeExam;
-import com.cedraz.exams.app.model.Student;
 import com.cedraz.exams.app.service.PracticeExamService;
 
 import org.springframework.http.HttpStatus;

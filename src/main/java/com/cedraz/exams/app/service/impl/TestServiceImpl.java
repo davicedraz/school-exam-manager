@@ -4,9 +4,11 @@ import com.cedraz.exams.app.dto.AnswerDto;
 import com.cedraz.exams.app.exception.ApplicationException;
 import com.cedraz.exams.app.exception.EntityType;
 import com.cedraz.exams.app.exception.ExceptionType;
+import com.cedraz.exams.app.model.PracticeExam;
 import com.cedraz.exams.app.model.Question;
 import com.cedraz.exams.app.model.Test;
 import com.cedraz.exams.app.model.constant.Difficulty;
+import com.cedraz.exams.app.repository.PracticeExamRepository;
 import com.cedraz.exams.app.repository.QuestionRepository;
 import com.cedraz.exams.app.repository.TestRepository;
 import com.cedraz.exams.app.service.TestService;
@@ -28,9 +30,15 @@ public class TestServiceImpl implements TestService {
     @Autowired
     QuestionRepository questionRepository;
 
+    @Autowired
+    PracticeExamRepository practiceExamRepository;
+
     @Override
-    public void answerOneQuestion(long testId, long questionId, AnswerDto answer) {
-        Optional<Test> testToBeAnswered = testRepository.findById(testId);
+    public void answerOneQuestion(long studentId, long testId, long questionId, AnswerDto answer) {
+        PracticeExam exam = practiceExamRepository.findByStudent_Id(studentId);
+
+        Optional<Test> testToBeAnswered = exam.getTests().stream()
+                .filter(test -> test.getId() == testId).findFirst();
 
         if(!testToBeAnswered.isPresent())
             throw exception(EntityType.SCHOOL_TEST, ExceptionType.ENTITY_NOT_FOUND, String.valueOf(testId));
@@ -43,7 +51,7 @@ public class TestServiceImpl implements TestService {
             throw exception(EntityType.QUESTION_TEST, ExceptionType.ENTITY_NOT_FOUND, String.valueOf(testId));
 
         questionToBeAnswered.get().setAnswer(answer.getAnswer());
-        testRepository.save(test); //FIXME: atualizar o practice exam do usuario logado
+        practiceExamRepository.save(exam);
     }
 
     @Override
@@ -53,11 +61,7 @@ public class TestServiceImpl implements TestService {
                     scoreOfCorrectQuestions(test.getQuestions(), Difficulty.MEDIUM) +
                     scoreOfCorrectQuestions(test.getQuestions(), Difficulty.HARD);
 
-            int totalScore = totalScoreQuestions + 600;
-            test.setScore(totalScore);
-            testRepository.save(test);
-
-            return totalScore;
+            return totalScoreQuestions + 600;
         } catch (Error error) {
             throw exception(EntityType.SCHOOL_TEST, ExceptionType.ENTITY_EXCEPTION);
         }

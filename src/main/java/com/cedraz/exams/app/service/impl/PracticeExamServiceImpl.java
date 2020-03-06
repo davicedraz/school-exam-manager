@@ -26,7 +26,6 @@ public class PracticeExamServiceImpl implements PracticeExamService {
     private TestService testService;
 
     @Autowired
-
     private StudentRepository studentRepository;
 
     @Autowired
@@ -74,7 +73,7 @@ public class PracticeExamServiceImpl implements PracticeExamService {
     public List<PracticeExam> evaluateBestStudents() {
         List<Student> students = studentRepository.findAll();
         students.forEach(student -> evaluateIndividualExam(student.getRegistrationNumber()));
-        return practiceExamRepository.findAllByOrderByTotalScore();
+        return practiceExamRepository.findAllByOrderByTotalScoreDesc();
     }
 
     private RuntimeException exception(EntityType entityType, ExceptionType exceptionType, String... args) {
