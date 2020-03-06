@@ -9,7 +9,6 @@ import com.cedraz.exams.app.model.Question;
 import com.cedraz.exams.app.model.Test;
 import com.cedraz.exams.app.model.constant.Difficulty;
 import com.cedraz.exams.app.repository.PracticeExamRepository;
-import com.cedraz.exams.app.repository.QuestionRepository;
 import com.cedraz.exams.app.repository.TestRepository;
 import com.cedraz.exams.app.service.TestService;
 
@@ -26,9 +25,6 @@ public class TestServiceImpl implements TestService {
 
     @Autowired
     TestRepository testRepository;
-
-    @Autowired
-    QuestionRepository questionRepository;
 
     @Autowired
     PracticeExamRepository practiceExamRepository;
