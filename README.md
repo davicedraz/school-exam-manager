@@ -38,13 +38,11 @@ Most of the data was entered through migrations, so that it was possible to quic
 
 ### Architecture
 
-In software engineering, the solution architecture is a product of the quality attributes extracted from the requirements and business rules.
-
-The current database schema looks as follows:
+In software engineering, the solution architecture is a product of the quality attributes extracted from the requirements and business rules. The current database schema looks as follows:
 
 ![ERD](docs/images/ERD_School_Exams_Management_System.png)
 
-- A simulation may have \<N\> tests
+- A Practice Exam may have \<N\> tests
 - Each test has a list of 10 questions, 3 easy, 4 medium and 3 difficult
 - Each test contains a different answer key associated
 
@@ -93,7 +91,7 @@ You can also import the docs/json/postman_collection.json file on [Postman Platf
 ### Build & Run
 
 ```bash
-$ maven package #or $mvn install
+$ maven package #or $ mvn install
 ```
 
 Run the Spring Boot app from a command line in a Terminal with the java -jar command:
