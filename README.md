@@ -92,19 +92,39 @@ You can also import the docs/json/postman_collection.json file on [Postman Platf
 
 ### Build & Run
 
+#### Locally
+
+```bash
+$ maven package #or $mvn install
+```
+
+Run the Spring Boot app from a command line in a Terminal with the java -jar command:
+
+```bash
+$ java -jar target/school-exam-manager-0.0.1-SNAPSHOT.jar
+```
+
+We can also Maven plugin to run the app:
+
+```bash
+$ mvn spring-boot:run
+```
+
+#### Docker
+
 Command to build a [Docker](https://www.docker.com/) container image:
 
 ```bash
-docker build -t school-exam-manager .
+$ docker build -t school-exam-manager .
 ```
 
 Command to run the container:
 
 ```bash
-docker run -p 8080:8080 school-exam-manager
+$ docker run -p 8080:8080 school-exam-manager
 ```
-
 ---
 
-### Contributors
-##### [Davi Cedraz](https://www.linkedin.com/in/davicedraz/)
+<p align="right">
+<a href="https://www.linkedin.com/in/davicedraz/">Davi Cedraz</>
+<p>
