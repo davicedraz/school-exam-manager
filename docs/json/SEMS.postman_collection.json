@@ -162,11 +162,16 @@
 								"name": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "Student-Id",
+								"value": "3",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"answer\": \"B\"\n}",
+							"raw": "{\n\t\"answer\": \"A\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -174,7 +179,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/api/v1/test/21/question/12",
+							"raw": "localhost:8080/api/v1/test/55/question/45",
 							"host": [
 								"localhost"
 							],
@@ -183,9 +188,9 @@
 								"api",
 								"v1",
 								"test",
-								"21",
+								"55",
 								"question",
-								"12"
+								"45"
 							]
 						}
 					},
@@ -219,7 +224,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/v1/exam/student/1/score",
+							"raw": "localhost:8080/api/v1/exam/student/3/score",
 							"host": [
 								"localhost"
 							],
@@ -229,7 +234,7 @@
 								"v1",
 								"exam",
 								"student",
-								"1",
+								"3",
 								"score"
 							]
 						}
