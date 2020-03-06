@@ -92,8 +92,6 @@ You can also import the docs/json/postman_collection.json file on [Postman Platf
 
 ### Build & Run
 
-#### Locally
-
 ```bash
 $ maven package #or $mvn install
 ```
